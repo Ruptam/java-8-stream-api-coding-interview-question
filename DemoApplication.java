@@ -56,7 +56,7 @@ public class DemoApplication {
 		Map<String, Double> avgSalForEachDept = employees.stream().collect(Collectors.groupingBy(Employee::getDepartNames, Collectors.averagingDouble(Employee::getSalary)));
 		System.out.println("Average salary of each department " + avgSalForEachDept);
 
-		Map<String, Optional<Employee>> highestSalForEachDedpt = employees.stream().collect(Collectors.groupingBy(Employee::getDepartNames, Collectors.minBy(Comparator.comparing(Employee::getSalary))));
+		Map<String, Optional<Employee>> highestSalForEachDedpt = employees.stream().collect(Collectors.groupingBy(Employee::getDepartNames, Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
 		System.out.println(highestSalForEachDedpt);
 
 		List<Employee> employeesWithSortedSalary = employees.stream().sorted(Comparator.comparing(Employee::getSalary)).collect(Collectors.toList());
