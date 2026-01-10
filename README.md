@@ -129,7 +129,7 @@
 13. ### Find the highest salary in each department
 
    ```java
-      Map<String, Optional<Employee>> highestSalForEachDedpt = employees.stream().collect(Collectors.groupingBy(Employee::getDepartNames, Collectors.minBy(Comparator.comparing(Employee::getSalary))));
+      Map<String, Optional<Employee>> highestSalForEachDedpt = employees.stream().collect(Collectors.groupingBy(Employee::getDepartNames, Collectors.maxBy(Comparator.comparing(Employee::getSalary))));
 ```
 
 **[⬆ Back to Top](#table-of-contents)**
@@ -166,3 +166,4 @@
 Good luck with your interview 😊
 
 ---
+
